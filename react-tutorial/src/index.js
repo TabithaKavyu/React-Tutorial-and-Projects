@@ -34,7 +34,7 @@ const Image = () => (
 
 const Title = () => <h1>Becoming: A Guided Journal for Discovering Your Voice</h1>;
 
-const Author = () => <h4>Michelle  Obama</h4>;
+const Author = () => <h4 style={{color:'#617d98',fontSize: '0.75rem', marginTop:'0.25rem' }}>Michelle  Obama</h4>;
 
 
 ReactDom.render(<BookList />, document.getElementById('root'));
