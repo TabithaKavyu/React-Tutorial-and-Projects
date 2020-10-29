@@ -3,14 +3,15 @@ import ReactDom from 'react-dom'
 import './index.css'
 
 const books = [
-    {
+    {   id: 1,
         title: 'Becoming: A Guided Journal for Discovering Your Voice',
         author: 'Michelle Obama',
         img: "https://m.media-amazon.com/images/I/81bFNmhKrTL._AC_UY218_.jpg"
 
     },
 
-    {
+    {   
+        id: 2,
         title: 'Humans',
         author: 'Brandon Stanton',
         img: "https://images-na.ssl-images-amazon.com/images/I/51B-BOBtQtL._AC_SX184_.jpg"
@@ -18,6 +19,7 @@ const books = [
     },
 
     {
+        id: 3,
         title: 'Greenlights',
         author: 'Mathew McConaughey',
         img: "https://images-na.ssl-images-amazon.com/images/I/41rbthdtokL._AC_SX184_.jpg"
@@ -30,7 +32,7 @@ function BookList() {
         <section className = 'booklist'>
                 {books.map((book) => {
                 const { img, title, author } = book;
-                return <Book book={book}></Book>
+                    return <Book key={book.id}  {...book}></Book>
         })
     }
             
@@ -39,7 +41,7 @@ function BookList() {
 }
 
 const Book = (props) => {
-    const { img, title, author } = props.book;
+    const { img, title, author } = props;
     return (
         <article className='book'>
              <img src={img} alt='' />
